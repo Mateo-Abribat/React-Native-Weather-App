@@ -26,7 +26,7 @@ function HomeDayDetailScreen(): React.JSX.Element {
   }, [route.params.weather]);
 
   return (
-    <WeatherBackground icon={weather.weather[0].icon ?? "01d"}>
+    <WeatherBackground icon={weather?.weather[0].icon ?? "default"}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{

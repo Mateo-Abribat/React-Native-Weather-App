@@ -95,7 +95,10 @@ function HomeScreen(): React.JSX.Element {
   }, [navigation, actualLocation, location]);
 
   return (
-    <WeatherBackground icon={weather?.weather[0].icon ?? "01d"}>
+    <WeatherBackground
+      loading={loading}
+      icon={weather?.weather[0].icon ?? "01d"}
+    >
       <ScrollView
         scrollEnabled={!loading}
         showsVerticalScrollIndicator={false}

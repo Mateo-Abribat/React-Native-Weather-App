@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { DARK_GRAY, GRAY } from "@style/Colors";
+
 const backgroundMap: { [key: string]: string[] } = {
   "01d": ["#9AD1FF", "#6BA8E6", "#3D85CD"],
   "01n": ["#193A6F", "#001F3F", "#000A1A"],
@@ -21,21 +23,24 @@ const backgroundMap: { [key: string]: string[] } = {
   "13n": ["#CCCCCC", "#A8A8A8", "#7F7F7F"],
   "50d": ["#C6C6C6", "#B3B3B3", "#A8A8A8"],
   "50n": ["#A8A8A8", "#7F7F7F", "#5F5F5F"],
+  default: [GRAY, DARK_GRAY],
 };
 
 interface WeatherBackgroundProps {
-  icon: string | undefined;
+  icon: string;
+  loading?: boolean;
   children: React.ReactNode;
 }
 
 function WeatherBackground({
   icon,
+  loading,
   children,
 }: WeatherBackgroundProps): React.JSX.Element {
   return (
     <LinearGradient
       style={styles.container}
-      colors={backgroundMap[icon ?? "01d"]}
+      colors={backgroundMap[loading ? "default" : icon]}
     >
       {children}
     </LinearGradient>
