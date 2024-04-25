@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 import SkeletonView from "./SkeletonView";
-import { LIGHT_GRAY } from "@style/Colors";
+import { LIGHT_GRAY, VIOLET } from "@style/Colors";
 import CountryFlag from "react-native-country-flag";
 
 interface ListCityItemProps extends TouchableOpacityProps {
@@ -67,7 +67,7 @@ function ListCityItem({
           activeOpacity={activeOpacity ?? 0.5}
           onPress={() => (onPressRemove ? onPressRemove() : null)}
         >
-          <Ionicons name="close" size={22} color={colors.text} />
+          <Ionicons name="close" size={22} color={VIOLET} />
         </TouchableOpacity>
       )}
     </TouchableOpacity>
