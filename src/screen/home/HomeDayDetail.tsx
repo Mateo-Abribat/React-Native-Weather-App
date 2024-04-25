@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { moderateVerticalScale } from "react-native-size-matters";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -18,8 +18,12 @@ import {
 function HomeDayDetailScreen(): React.JSX.Element {
   const insets = useSafeAreaInsets();
   const route = useRoute<HomeNavRouteProp<HomeStackScreens.HomeDayDetail>>();
-  const city = route.params.city;
-  const weather = route.params.weather;
+  const city = useMemo(() => {
+    return route.params.city;
+  }, [route.params.city]);
+  const weather = useMemo(() => {
+    return route.params.weather;
+  }, [route.params.weather]);
 
   return (
     <WeatherBackground icon={weather.weather[0].icon ?? "01d"}>
