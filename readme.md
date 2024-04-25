@@ -26,17 +26,21 @@ To start using the Meteo app, follow these steps:
 
 You can run the app on iOS, Android, or web using Expo.
 
+### Expo
+
+`yarn start`
+
 #### iOS
 
-`npm run ios`
+`yarn ios`
 
 #### Android
 
-`npm run android`
+`yarn android`
 
 #### Web
 
-`npm run web`
+`yarn web`
 
 ### Note
 
