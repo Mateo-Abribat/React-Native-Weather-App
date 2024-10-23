@@ -13,10 +13,14 @@ To start using the Meteo app, follow these steps:
 - Node.js installed on your machine
 - Expo CLI installed globally (`npm install -g expo-cli`)
 
+### Env
+
+- Add the following variables to your `.env` file: `BASE_URL` and `API_KEY` (for OpenWeather).
+
 ### Installation
 
 1. Clone the repository to your local machine:
-   git clone <https://github.com/Mateo-Abribat/meteo_app.git>
+   git clone <https://github.com/Mateo-Abribat/React-Native-Weather-App.git>
 2. Get inside the repository:
    cd meteo_app
 3. Install dependencies:
